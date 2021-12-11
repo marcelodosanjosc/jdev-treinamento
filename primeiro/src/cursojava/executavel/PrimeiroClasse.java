@@ -2,6 +2,7 @@ package cursojava.executavel;
 
 import cursojava.classes.Aluno;
 import cursojava.classes.Disciplina;
+import cursojava.classes.Secretario;
 import cursojava.constantes.StatusAluno;
 
 import javax.swing.*;
@@ -85,6 +86,10 @@ public class PrimeiroClasse {
                 System.out.println("aluno: " + aluno.getNome() + " Media: " + aluno.getMediaNota());
             }
 
+            
+            Secretario secretario = new Secretario();
+            secretario.setNome("Alex");
+            System.out.println("Nome " +secretario.getNome());		
 
 
 
