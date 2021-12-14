@@ -30,6 +30,11 @@ public class Diretor extends Pessoa{
 				+ getDataNascimento() + ", getRegistroGeral()=" + getRegistroGeral() + ", getNumeroCpf()="
 				+ getNumeroCpf() + ", getNomeMae()=" + getNomeMae() + ", getNomePai()=" + getNomePai() + "]";
 	}
+	@Override
+	public double sarario() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 	
 	
 	

@@ -100,5 +100,15 @@ public class Aluno extends Pessoa{
         }
     }
 
+
+	@Override
+	public double sarario() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	
+
     
 }

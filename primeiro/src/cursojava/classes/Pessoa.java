@@ -1,6 +1,6 @@
 package cursojava.classes;
 
-public class Pessoa {
+public abstract class Pessoa {
 
 	private String nome;
 	private int idade;
@@ -9,6 +9,8 @@ public class Pessoa {
 	private String numeroCpf;
 	private String nomeMae;
 	private String nomePai;
+	
+	public abstract double sarario();
 	public String getNome() {
 		return nome;
 	}
