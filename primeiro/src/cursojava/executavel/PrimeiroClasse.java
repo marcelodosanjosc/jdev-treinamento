@@ -1,9 +1,12 @@
 package cursojava.executavel;
 
 import cursojava.classes.Aluno;
+import cursojava.classes.Diretor;
 import cursojava.classes.Disciplina;
 import cursojava.classes.Secretario;
+import cursojava.classesauxiliar.FuncaoAutenticacao;
 import cursojava.constantes.StatusAluno;
+import cursojava.interfaces.PermitirAcesso;
 
 import javax.swing.*;
 import java.time.chrono.ThaiBuddhistDate;
@@ -16,9 +19,12 @@ public class PrimeiroClasse {
 
         String login = JOptionPane.showInputDialog("Login ");
         String senha = JOptionPane.showInputDialog("Senha ");
+        
+        
+       
+        /*Innterface em ação para autenticar com classes secretario */
 
-        if (login.equalsIgnoreCase("admin") &&
-                senha.equalsIgnoreCase("admin")) {
+        if (new FuncaoAutenticacao(new Diretor(login, senha)).autenticarCursoJava()) {
             List<Aluno> alunos = new ArrayList<>();
 
 /*        List<Aluno> alunosAprovado = new ArrayList<>();
@@ -87,9 +93,9 @@ public class PrimeiroClasse {
             }
 
             
-            Secretario secretario = new Secretario();
-            secretario.setNome("Alex");
-            System.out.println("Nome " +secretario.getNome());		
+           Secretario secretario1 = new Secretario();
+            secretario1.setNome("Alex");
+            System.out.println("Nome " +secretario1.getNome());		
 
 
 
@@ -131,6 +137,8 @@ public class PrimeiroClasse {
             System.out.println(aluno.toString());
             System.out.println("------------------------------------------------------------------------");
         }*/
+        }else {
+        	JOptionPane.showInternalMessageDialog(null, "Acesso não permitido!");
         }
     }
 }
