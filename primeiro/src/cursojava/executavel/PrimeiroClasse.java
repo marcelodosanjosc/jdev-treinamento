@@ -6,16 +6,25 @@ import cursojava.classes.Disciplina;
 import cursojava.classes.Secretario;
 import cursojava.classesauxiliar.FuncaoAutenticacao;
 import cursojava.constantes.StatusAluno;
+import cursojava.excecao.ExcecaoProcessarNota;
 import cursojava.interfaces.PermitirAcesso;
+import groovyjarjarantlr4.v4.parse.ANTLRParser.parserRule_return;
 
 import javax.swing.*;
+
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.time.chrono.ThaiBuddhistDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Scanner;
 
 public class PrimeiroClasse {
-    public static void main(String[] args) {
+	public static void main(String[] args) {
+    	try {
+
+  
 
         String login = JOptionPane.showInputDialog("Login ");
         String senha = JOptionPane.showInputDialog("Senha ");
@@ -42,12 +51,17 @@ public class PrimeiroClasse {
                 System.out.println("Ola mundo");
 
                 for (int pos = 1; pos <= 1; pos++) {
+                	Disciplina disciplina = new Disciplina();
                     String nomeDisciplina = JOptionPane.showInputDialog("Nome da disciplina " + pos + " ?");
-                    String notaDisciplina = JOptionPane.showInputDialog("Nota da disciplina " + pos + " ?");
-
-                    Disciplina disciplina = new Disciplina();
                     disciplina.setDisciplina(nomeDisciplina);
-                    disciplina.setNota(Double.valueOf(notaDisciplina));
+                    
+                    for (int i = 1 ; i <= 4;i++) {	
+                    String notaDisciplina  = JOptionPane.showInputDialog("Nota "+i+" da disciplina " + pos + " ?");
+                    	double[] notas = new double[4];
+                    	notas[i] = Double.valueOf(notaDisciplina);
+                    	 disciplina.setNota(notas);
+                    }
+                   
                     aluno1.getDisciplinas().add(disciplina);
                 }
 
@@ -140,5 +154,8 @@ public class PrimeiroClasse {
         }else {
         	JOptionPane.showInternalMessageDialog(null, "Acesso não permitido!");
         }
+    	}catch (Exception e) {
+			e.printStackTrace();
+		}
     }
 }
