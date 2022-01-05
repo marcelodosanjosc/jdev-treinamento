@@ -1,7 +1,6 @@
 package cursojava.classes;
 
-import cursojava.constantes.StatusAluno;
-
+//import cursojava.constantes.StatusAluno;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -87,7 +86,7 @@ public class Aluno extends Pessoa{
         }
     }
 
-    public String getAlunoAprovado2(){
+   /* public String getAlunoAprovado2(){
         double media = this.getMediaNota();
         if (media >= 5){
             if (media >=7) {
@@ -99,7 +98,7 @@ public class Aluno extends Pessoa{
             return StatusAluno.REPROVADO;
         }
     }
-
+*/
 
 	@Override
 	public double sarario() {

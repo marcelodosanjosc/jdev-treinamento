@@ -5,7 +5,6 @@ import cursojava.classes.Diretor;
 import cursojava.classes.Disciplina;
 import cursojava.classes.Secretario;
 import cursojava.classesauxiliar.FuncaoAutenticacao;
-import cursojava.constantes.StatusAluno;
 import cursojava.excecao.ExcecaoProcessarNota;
 import cursojava.interfaces.PermitirAcesso;
 import groovyjarjarantlr4.v4.parse.ANTLRParser.parserRule_return;
@@ -21,7 +20,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class PrimeiroClasse {
-	public static void main(String[] args) {
+/*	public static void main(String[] args) {*//*
     	try {
 
   
@@ -31,17 +30,18 @@ public class PrimeiroClasse {
         
         
        
-        /*Innterface em ação para autenticar com classes secretario */
+        *//**//*Innterface em ação para autenticar com classes secretario *//**//*
 
         if (new FuncaoAutenticacao(new Diretor(login, senha)).autenticarCursoJava()) {
             List<Aluno> alunos = new ArrayList<>();
 
-/*        List<Aluno> alunosAprovado = new ArrayList<>();
+*//**//*        List<Aluno> alunosAprovado = new ArrayList<>();
         List<Aluno> alunosRecuperacao = new ArrayList<>();
-        List<Aluno> alunosReprovado = new ArrayList<>();*/
+        List<Aluno> alunosReprovado = new ArrayList<>();*//**//*
 
             HashMap<String, List<Aluno>> maps = new HashMap<>();
 
+*//**//*
 
             for (int qtd = 1; qtd <= 2; qtd++) {
                 String nome = JOptionPane.showInputDialog("Qual seu nome " + qtd + " ?");
@@ -64,8 +64,9 @@ public class PrimeiroClasse {
                    
                     aluno1.getDisciplinas().add(disciplina);
                 }
+*//**//*
 
-        /*int escolha = JOptionPane.showConfirmDialog(null, "Deseja remove alguma disciplina?");
+        *//**//*int escolha = JOptionPane.showConfirmDialog(null, "Deseja remove alguma disciplina?");
         if (escolha == 0) {
             int continuarRemover = 0;
             int posicao = 1;
@@ -75,10 +76,10 @@ public class PrimeiroClasse {
                 posicao++;
                 continuarRemover = JOptionPane.showConfirmDialog(null, "Continual remover ?");
             }
-        }*/
-                alunos.add(aluno1);
+        }*//**//*
+              //  alunos.add(aluno1);
             }
-            maps.put(StatusAluno.APROVADO, new ArrayList<Aluno>());
+          *//**//*  maps.put(StatusAluno.APROVADO, new ArrayList<Aluno>());
             maps.put(StatusAluno.RECUPERACAO, new ArrayList<Aluno>());
             maps.put(StatusAluno.REPROVADO, new ArrayList<Aluno>());
 
@@ -104,7 +105,7 @@ public class PrimeiroClasse {
             System.out.println("------- Lista do Reprovados ---------");
             for (Aluno aluno : maps.get(StatusAluno.REPROVADO)) {
                 System.out.println("aluno: " + aluno.getNome() + " Media: " + aluno.getMediaNota());
-            }
+            }*//**//*
 
             
            Secretario secretario1 = new Secretario();
@@ -113,7 +114,7 @@ public class PrimeiroClasse {
 
 
 
-      /*  for (int pos = 0; pos < alunos.size(); pos++) {
+      *//**//*  for (int pos = 0; pos < alunos.size(); pos++) {
             Aluno aluno = alunos.get(pos);
 
            if (aluno.getNome().equalsIgnoreCase("alex")){
@@ -139,9 +140,9 @@ public class PrimeiroClasse {
 
             System.out.println("---------------------------------------------");
 
-        } */
+        } *//**//*
 
-       /* for (Aluno aluno: alunos) {
+       *//**//* for (Aluno aluno: alunos) {
 
             System.out.println("Nome:" + aluno.getNome());
             System.out.println("A media: " + aluno.getMediaNota());
@@ -150,12 +151,12 @@ public class PrimeiroClasse {
             System.out.println("Disciplina: " + aluno.getDisciplinas().toString());
             System.out.println(aluno.toString());
             System.out.println("------------------------------------------------------------------------");
-        }*/
-        }else {
+        }*//**//*
+    *//**//*    }else {
         	JOptionPane.showInternalMessageDialog(null, "Acesso não permitido!");
         }
     	}catch (Exception e) {
 			e.printStackTrace();
-		}
-    }
+		}*//**//*
+*//*    }*/
 }
